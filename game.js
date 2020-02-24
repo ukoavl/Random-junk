@@ -82,19 +82,4 @@ function selectOption(option) {
 }
 
 
-/**
- * check if player has the object which is key, if the player has it set value 1 or true
- * @param {*} json -
- * @param {object} value -key required 
- */
-function checkForValue(json, value) {
-    for (key in json) {
-        if (typeof (json[key]) === "object") {
-            return checkForValue(json[key], value);
-        } else if (json[key] === value) {
-            return true;
-        }
-    }
-    return false;
-}
 
