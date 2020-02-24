@@ -64,7 +64,36 @@ function showOption(option) {
     return option.requireState == null || option.requireState(state)
 }
 
+/**
+ * triggering the event to happend, after pressing button load next text node
+ * @param {room number} option - button, check hich button been selected, if button = 0 then restart game
+ */
+function selectOption(option) {
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0) {
+        return startGame()
+    }
+    state = Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+}
 
+
+/**
+ * check if player has the object which is key, if the player has it set value 1 or true
+ * @param {*} json - the JSON room data
+ * @param {object} value -key required 
+ * @returns {bool} Returns true or false if a value is present
+ */
+function checkForValue(json, value) {
+    for (key in json) {
+        if (typeof (json[key]) === "object") {
+            return checkForValue(json[key], value);
+        } else if (json[key] === value) {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 
