@@ -68,18 +68,7 @@ function showOption(option) {
 
 
 
-/**
- * triggering the event to happend, after pressing button load next text node
- * @param {room number} option - button, check hich button been selected, if button = 0 then restart game
- */
-function selectOption(option) {
-    const nextTextNodeId = option.nextText
-    if (nextTextNodeId <= 0) {
-        return startGame()
-    }
-    state = Object.assign(state, option.setState)
-    showTextNode(nextTextNodeId)
-}
+
 
 
 
