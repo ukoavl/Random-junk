@@ -119,10 +119,7 @@ function checkForValue(json, value) {
 
 
 
-/**
- * Text Nodes
- * The
- */
+
 const textNodes = [
     {
         id: 1, //main room
